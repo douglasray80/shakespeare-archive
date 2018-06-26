@@ -1,0 +1,14 @@
+@import 'styleguide/variables';
+
+.book-sidebar {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 18%;
+}
+
+.sidebar-contents {
+	position: fixed;
+	border-right: 1px solid black;
+	height: 100vh;
+}

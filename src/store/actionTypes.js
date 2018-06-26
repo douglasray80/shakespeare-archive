@@ -1,0 +1,4 @@
+export const UPDATE_TAGS = 'UPDATE_TAGS'
+export const UPDATE_POSTS = 'UPDATE_POSTS'
+export const UPDATE_RATINGS = 'UPDATE_RATINGS'
+export const FETCH_SINGLE_POST = 'FETCH_SINGLE_POST'
