@@ -35,24 +35,26 @@ class Book extends Component {
 							<ArrowBack />
 						</Link>
 
-						<ul>
-							{book.text &&
-								toArray(book.text).map((act, i) =>
+						<h3>{book.title}</h3>
+						{book.text &&
+							toArray(book.text).map((act, i) =>
 								<div key={randomString()}>
 									<h4>{`Act ${i + 1}`}</h4>
 									<Scrollspy
-										items={toArray(act.scenes).map((scene, j) => `scene-${j + 1}`)}
+										className='sidebar-nav'
+										items={toArray(act.scenes).map((scene, j) => `act-${i + 1}-scene-${j + 1}`)}
 										currentClassName="active-link"
 									>
 										{toArray(act.scenes).map((scene, j) =>
 											<li key={randomString()}>
-												<a href={`#scene-${j + 1}`}>{`Scene ${j + 1}`}</a>
+												<a href={`#act-${i + 1}-scene-${j + 1}`}>{`Scene ${j + 1}`}</a>
 											</li>
 										)}
 									</Scrollspy>
 								</div>
-							)}
-						</ul>
+							)
+						}
+
 					</div>
 				</div>
 
@@ -63,15 +65,21 @@ class Book extends Component {
 
 					{book.text &&
 						toArray(book.text).map((act, i) =>
-						<div key={randomString()}>
-							{toArray(act.scenes).map((scene, j) =>
-								<div key={randomString()}>
-									<h4 id={`scene-${j + 1}`}>Act {i + 1}, Scene {j + 1}</h4>
-									<Markdown html={scene} />
-								</div>
-							)}
-						</div>
-					)}
+							<div key={randomString()}>
+								{toArray(act.scenes).map((scene, j) =>
+									<div
+										key={randomString()}
+										className='text'
+									>
+										<h4 id={`act-${i + 1}-scene-${j + 1}`}>Act {i + 1}, Scene {j + 1}</h4>
+										<Markdown
+											html={scene}
+										/>
+									</div>
+								)}
+							</div>
+						)
+					}
 
 				</div>
 			</div>

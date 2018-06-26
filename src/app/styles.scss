@@ -12,6 +12,7 @@ a { text-decoration: none; }
 
 .app-container {
 	min-height: 100vh;
+	min-width: 950px;
 	display: flex;
 	flex-direction: column;
 }

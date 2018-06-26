@@ -8,7 +8,25 @@
 }
 
 .sidebar-contents {
+	padding: 1rem 1rem;
 	position: fixed;
 	border-right: 1px solid black;
 	height: 100vh;
+	overflow-y: auto;
+	font-family: 'Cormorant Unicase';
+	a {	color: black; }
+	li.active-link {
+		a { color: red; }
+	}
+
+	h4 {
+		margin: 0;
+		border-bottom: 1px solid black;
+	}
+}
+
+.sidebar-nav {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
 }

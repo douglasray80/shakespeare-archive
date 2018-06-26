@@ -1,4 +1,4 @@
-import firebase from '../../firebase'
+import firebase, { firestore } from '../../firebase'
 
 const openBook = book => ({
 	type: 'READ_BOOK',
@@ -10,15 +10,15 @@ export const closeBook = () => ({
 })
 
 export const getBook = (book) => dispatch => {
-	const bookRef = firebase.firestore().collection("plays").doc(book)
+	const bookRef = firestore.collection('plays').doc(book)
 
 	return bookRef.get().then(function(doc) {
 		if (doc.exists) {
       dispatch(openBook(doc.data()))
     } else {
-      console.log("No such document!");
+      console.log('No such document!');
     }
 	}).catch(function(error) {
-	    console.log("Error getting document:", error);
+	    console.log('Error getting document:', error);
 	});
 }

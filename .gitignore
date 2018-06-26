@@ -23,3 +23,7 @@ yarn-error.log*
 
 # source text files
 /raw
+
+# firebase stuff
+.firebaserc
+firebase.json
