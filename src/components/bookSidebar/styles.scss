@@ -1,32 +1,33 @@
 @import 'styleguide/variables';
-
-.book-sidebar {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	width: 18%;
-}
-
-.sidebar-contents {
-	padding: 1rem 1rem;
-	position: fixed;
-	border-right: 1px solid black;
-	height: 100vh;
-	overflow-y: auto;
-	font-family: 'Cormorant Unicase';
-	a {	color: black; }
-	li.active-link {
-		a { color: red; }
-	}
-
-	h4 {
-		margin: 0;
-		border-bottom: 1px solid black;
-	}
-}
-
-.sidebar-nav {
-	margin: 0;
-	padding-left: 0;
-	list-style: none;
-}
+// 
+// .book-sidebar {
+// 	display: flex;
+// 	flex-direction: column;
+// 	// height: 100vh;
+// 	// width: 18%;
+// 	grid-area: s;
+// }
+//
+// .sidebar-contents {
+// 	padding: 1rem 1rem;
+// 	position: fixed;
+// 	border-right: 1px solid black;
+// 	height: 100vh;
+// 	overflow-y: auto;
+// 	font-family: 'Cormorant Unicase';
+// 	a {	color: black; }
+// 	li.active-link {
+// 		a { color: red; }
+// 	}
+//
+// 	h4 {
+// 		margin: 0;
+// 		border-bottom: 1px solid black;
+// 	}
+// }
+//
+// .sidebar-nav {
+// 	margin: 0;
+// 	padding-left: 0;
+// 	list-style: none;
+// }

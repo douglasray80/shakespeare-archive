@@ -21,7 +21,6 @@ class Book extends Component {
 
 	render() {
 		const { book } = this.props
-		console.log(book)
 
 		if (!book) return 'Loading...'
 
@@ -31,23 +30,42 @@ class Book extends Component {
 				{/* <BookSidebar book={book} /> */}
 				<div className='book-sidebar'>
 					<div className='sidebar-contents'>
-						<Link to='/'>
+						<Link
+							to='/'
+							role='link'
+							aria-label='Back to main menu'
+						>
 							<ArrowBack />
 						</Link>
 
-						<h3>{book.title}</h3>
+						<p className='sidebar-title'>{book.title}</p>
 						{book.text &&
 							toArray(book.text).map((act, i) =>
-								<div key={randomString()}>
-									<h4>{`Act ${i + 1}`}</h4>
+								<div
+									role='menu'
+									key={randomString()}
+								>
+									<p
+										role='heading'
+										className='sidebar-small-heading'
+									>
+										{`Act ${i + 1}`}
+									</p>
 									<Scrollspy
 										className='sidebar-nav'
 										items={toArray(act.scenes).map((scene, j) => `act-${i + 1}-scene-${j + 1}`)}
 										currentClassName="active-link"
 									>
 										{toArray(act.scenes).map((scene, j) =>
-											<li key={randomString()}>
-												<a href={`#act-${i + 1}-scene-${j + 1}`}>{`Scene ${j + 1}`}</a>
+											<li
+												role='menuitem'
+												id={`Act${i + 1}Scene${j + 1}`}
+												key={randomString()}
+											>
+												<a
+													href={`#act-${i + 1}-scene-${j + 1}`}>
+													{`Scene ${j + 1}`}
+												</a>
 											</li>
 										)}
 									</Scrollspy>
@@ -61,7 +79,7 @@ class Book extends Component {
 				<div className='book-page'>
 					<h2>{book.title}</h2>
 					<p>{book.publishDate}</p>
-					{/* <Markdown html={book.cast} /> */}
+					<Markdown html={book.cast} />
 
 					{book.text &&
 						toArray(book.text).map((act, i) =>
@@ -71,9 +89,16 @@ class Book extends Component {
 										key={randomString()}
 										className='text'
 									>
-										<h4 id={`act-${i + 1}-scene-${j + 1}`}>Act {i + 1}, Scene {j + 1}</h4>
+										<h4
+											id={`act-${i + 1}-scene-${j + 1}`}
+											aria-labelledby={`Act${i + 1}Scene${j + 1}`}
+											role='heading'
+										>
+											Act {i + 1}, Scene {j + 1}
+										</h4>
 										<Markdown
 											html={scene}
+											aria-describedby={`act-${i + 1}-scene-${j + 1}`}
 										/>
 									</div>
 								)}
