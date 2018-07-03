@@ -27,6 +27,24 @@ const App = () => {
 						</Fragment>
 					)}
 				/>
+				<Route
+					exact
+					path='/about'
+					render={() => (
+						<Fragment>
+							<p>Under construction</p>
+						</Fragment>
+					)}
+				/>
+				<Route
+					exact
+					path='/resources'
+					render={() => (
+						<Fragment>
+							<p>Under construction</p>
+						</Fragment>
+					)}
+				/>
 				<Route path='/:book' component={Book} />
 			</Switch>
 		</div>
